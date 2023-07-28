@@ -13,15 +13,15 @@
         <h1>
             <p>Login</p><i class='bx bx-user-pin'></i>
         </h1>
-        <form action="">
-
+        <form action="/users/login" method="POST">
+             @csrf
             <div class="form-item">
                 <label>Email:</label>
-                <input class="input" id="email" type="email" required placeholder="justina@gmail.com" />
+                <input class="input" id="email" name="email" type="email" required placeholder="justina@gmail.com" />
             </div>
             <div class="form-item">
                 <label>Password:</label>
-                <input class="input" id="pass" type="password" required />
+                <input class="input" id="pass" name="password" type="password" required />
             </div>
             <button class="submit-btn">Submit</button>
         </form>

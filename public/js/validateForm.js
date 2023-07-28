@@ -114,14 +114,16 @@ const formCheck = (inputsToCheck) => {
                     item.style.border = "4px solid red";
                     if (!/[a-z]/.test(item.value)) {
                         validityDisplay(item, "Password should have lowercase");
-                    } else if (!/[A-Z]/.test(item.value)) {
-                        validityDisplay(item, "Password should have uppercase");
-                    } else if (item.value.length < 5) {
-                        validityDisplay(
-                            item,
-                            "Password should have a length of atleast five characters"
-                        );
-                    } else if (!/[0-9]/.test(item.value)) {
+                    }
+                    // else if (!/[A-Z]/.test(item.value)) {
+                    //     validityDisplay(item, "Password should have uppercase");
+                    // } else if (item.value.length < 5) {
+                    //     validityDisplay(
+                    //         item,
+                    //         "Password should have a length of atleast five characters"
+                    //     );
+                    // }
+                    else if (!/[0-9]/.test(item.value)) {
                         validityDisplay(item, "Password must contain numbers!");
                     }
                     displayText(errorText);

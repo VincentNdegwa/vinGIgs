@@ -11,29 +11,26 @@
 <body>
     <div class="form-container">
         <h1>
-            <p>Login</p><i class='bx bx-user-pin'></i>
+            <p>Register</p><i class='bx bx-user-pin'></i>
         </h1>
-        <form action="">
+        <form action="/users/register" method="POST">
+             @csrf
             <div class="form-item">
                 <label>First Name:</label>
-                <input class="input" id="name" type="text" required placeholder="Justina" />
-            </div>
-            <div class="form-item">
-                <label>User Name:</label>
-                <input class="input" id="u-name" type="text" required placeholder="Justina99" />
+                <input class="input" id="name"  name="name"  type="text" required placeholder="Justina" />
             </div>
             <div class="form-item">
                 <label>Email:</label>
-                <input class="input" id="email" type="email" required placeholder="justina@gmail.com" />
+                <input class="input" id="email"  name="email" type="email" required placeholder="justina@gmail.com" />
             </div>
             <div class="form-item">
                 <label>Password:</label>
-                <input class="input" id="pass" type="password" required />
+                <input class="input" id="pass" name="password"  type="password" required />
             </div>
 
             <div class="form-item">
                 <label>Conf Password:</label>
-                <input class="input" id="re-pass" type="password" required />
+                <input class="input" id="re-pass" name="conf-password"  type="password" required />
             </div>
 
             <button class="submit-btn">Submit</button>

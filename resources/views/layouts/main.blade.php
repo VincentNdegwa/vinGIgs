@@ -19,8 +19,8 @@
         </div>
         <nav class="navbars">
             <button><a href="/">Home</a></button>
-            <button>login</button>
-            <button>register</button>
+            <button><a href="/login">Login</a></button>
+            <button><a href="/register">Register</a></button>
         </nav>
     </header>
     <main>

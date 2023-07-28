@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\UserController;
 use App\Models\Listings;
 use Illuminate\Support\Facades\Route;
 
@@ -18,11 +19,18 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/',[ListingController::class, 'getAll']);
+Route::get('/',[ListingController::class, 'getAll'])->name('listingsAll')->middleware('auth');
 
-Route::get('/list/{id}',[ListingController::class, 'show']);
+Route::get('/list/{id}',[ListingController::class, 'show'])->middleware('auth');
 
 Route::get('/login',function(){
     return view('auth.login');
 });
+Route::get("/register", function(){
+    return view("auth/register");
+});
+Route::prefix('/users')->group(function(){
+    Route::post('/register', [UserController::class, 'registerUser']);
+    Route::post('/login', [UserController::class, 'loginUser']);
 
+});
