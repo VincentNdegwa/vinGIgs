@@ -10,6 +10,18 @@ class Listings extends Model
 {
     use HasFactory;
 
+    protected $fillable= [
+        'title',
+        'description',
+        'tags',
+        'company',
+        'location',
+        'website',
+        'email',
+        'description'
+
+    ];
+
     public static function getAll()
     {
         return DB::table('listings')->get();

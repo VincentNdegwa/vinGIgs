@@ -33,5 +33,5 @@
         copyright Vincent Ndegwa
     </footer>
 </body>
-
+<script src="/js/sendData.js"></script>
 </html>
