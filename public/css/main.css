@@ -25,6 +25,7 @@ header {
     align-items: center;
     padding-left: 5%;
     padding-right: 5%;
+    z-index: 100;
 }
 main {
     width: 100%;
@@ -43,22 +44,31 @@ footer {
     justify-content: center;
     align-items: center;
 }
-.logo>h1{
+.logo > h1 {
     color: yellow;
 }
-.logo>h1>span{
+.logo > h1 > span {
     color: #4942e4;
 }
-.navbars{
+.navbars {
     display: flex;
     flex-direction: row;
     gap: 5%;
+    width: 50%;
+    /* height: 1.2em; */
 }
-.navbars>button{
+.navbars > button {
     background: #4942e4;
-    color: #eee2de;
     border: 0px;
     outline: none;
-    padding: 5%;
+    color: white;
+    padding: 1%;
     border-radius: 0.4em;
+    width: auto;
+    text-decoration: none;
+}
+.navbars > button > a {
+    font-size: 0.8em;
+    color: #eee2de;
+    text-decoration: none;
 }

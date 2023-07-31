@@ -1,0 +1,13 @@
+.create-section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.form-create-listing {
+    width: 100%;
+}
+.form-label {
+    display: flex;
+    justify-content: start !important;
+    color: #4942e4;
+}

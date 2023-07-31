@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/Home/home.css">
     <link rel="stylesheet" href="/css/Listings/listings.css">
+    <link rel="stylesheet" href="/css/Create/create.css">
     <title>vinGigs</title>
 </head>
 
@@ -19,6 +20,7 @@
         </div>
         <nav class="navbars">
             <button><a href="/">Home</a></button>
+            <button><a href="/create">Create Task</a></button>
             <button><a href="/login">Login</a></button>
             <button><a href="/register">Register</a></button>
         </nav>
