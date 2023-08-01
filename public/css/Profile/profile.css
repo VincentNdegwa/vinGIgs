@@ -1,0 +1,34 @@
+.profile-form-item {
+    height: 7rem;
+}
+.image-profile-holder {
+    height: 6rem;
+    width: 6rem;
+}
+.image-profile-holder > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.image-profile-holder > label > i {
+    color: #4942e4;
+    display: flex;
+}
+.image-profile-holder {
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+.image-profile-holder > label {
+    cursor: pointer;
+    position: absolute;
+    top: 90%;
+    left: 0;
+}
+.profile-edit-btn {
+    background: gray;
+}
+.profile-delete-btn {
+    background: rgba(214, 29, 29, 0.753) !important;
+}

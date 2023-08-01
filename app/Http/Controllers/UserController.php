@@ -11,19 +11,52 @@ class UserController extends Controller
 
     public function registerUser(Request $request)
     {
-        if (User::create($request->all())) {
+        $user = User::create($request->all());
+        if ($user) {
+            auth()->login($user);
             return redirect('/');
-        }else{
+        } else {
             return redirect('/login');
         }
     }
 
-    public function loginUser(Request $request){
-        if (auth()->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
+    public function loginUser(Request $request)
+    {
+        if (auth()->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
             return redirect('/');
         }
-       return redirect('/login');
+        return redirect('/login');
+    }
+
+    public function getUserDetails()
+    {
+        $userId = auth()->id();
+        $user = User::find($userId);
+        return $user;
     }
 
 
+    public function loadPage()
+    {
+        $userData = $this->getUserDetails();
+        //    return dd($userData);
+        return view('pages.profile', [
+            "userData" => $userData,
+        ]);
+    }
+
+    public function updateUser(Request $data){
+        $user = User::find(auth()->id());
+        $updateUser = $user->update([
+            "name"=>$data->input('name'),
+            "email"=>$data->input('email'),
+            "password"=>$data->input('password'),
+        ]);
+        if ($updateUser) {
+           return redirect("/profile");
+        }else{
+           return redirect("/");
+        }
+        
+    }
 }

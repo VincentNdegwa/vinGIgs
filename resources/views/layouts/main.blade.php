@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/Home/home.css">
     <link rel="stylesheet" href="/css/Listings/listings.css">
     <link rel="stylesheet" href="/css/Create/create.css">
+    <link rel="stylesheet" href="/css/Profile/profile.css">
     <title>vinGigs</title>
 </head>
 
@@ -24,6 +25,10 @@
             <button><a href="/login">Login</a></button>
             <button><a href="/register">Register</a></button>
         </nav>
+        <div class="other-diplays">
+            <p><a href="{{ url('/profile') }}"><i class='bx bx-user-circle'></i></a> </p>
+            <p><i class='bx bxs-bell'></i></p>
+        </div>
     </header>
     <main>
         @yield('content')
@@ -34,4 +39,6 @@
     </footer>
 </body>
 <script src="/js/sendData.js"></script>
+<script src="/js/profile.js"></script>
+
 </html>

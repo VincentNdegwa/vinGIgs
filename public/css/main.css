@@ -72,3 +72,20 @@ footer {
     color: #eee2de;
     text-decoration: none;
 }
+.other-diplays {
+    display: flex;
+    gap: 0.5em;
+    text-decoration: none;
+    font-size: 2em;
+    background: linear-gradient(45deg, #4942e4, yellow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.other-diplays > p,
+.other-diplays > p > a {
+    /* font-size: 1.7em; */
+    text-decoration: none;
+
+    /* color: yellow; */
+}

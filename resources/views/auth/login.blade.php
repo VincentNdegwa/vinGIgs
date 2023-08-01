@@ -30,7 +30,7 @@
             <p>Have no account?</p>
         </a>
     </div>
-    <script src="js/validateForm.js"></script>
+    {{-- <script src="js/validateForm.js"></script> --}}
 </body>
 
 </html>
