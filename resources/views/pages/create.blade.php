@@ -50,7 +50,7 @@
                             placeholder="Description......." required>
                     </div>
                     <div class="form-item">
-                        <input type="submit" class="form-control" value="Edit Job">
+                        <input type="submit" class="form-control form-btn" value="Edit Job">
                     </div>
                 </form>
 

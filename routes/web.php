@@ -28,7 +28,7 @@ Route::get("/register", function () {
 });
 Route::get("/create", function () {
     return view("pages.create", [
-        'userCreatedJobs' => Listings::where('email', auth()->user()->email)->get(),
+        'userCreatedJobs' => Listings::where('email', auth()->user()->email)->orderBy('updated_at', 'DESC')->get(),
         'dataCreated' => null,
         'updatingData' => null,
     ]);

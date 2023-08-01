@@ -19,7 +19,7 @@
                         <p>
                             {{ $item->title }}
                         </p>
-                        <p>{{ date('d M Y', strtotime($item->updated_at)) }}</p>
+                        <p class="item-details-datetime">{{ date('d M ,H:i:s', strtotime($item->updated_at)) }}</p>
                         <span>
                             @foreach (explode(',', $item->tags) as $tag)
                                 <p>{{ $tag }}</p>

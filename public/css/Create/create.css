@@ -46,6 +46,10 @@
     grid-template-columns: 70% 29%;
     gap: 1%;
 }
+.item-listing:hover {
+    transition: all ease 0.4s;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+}
 .item-details {
     width: 100%;
     overflow: hidden;
@@ -54,7 +58,12 @@
     text-indent: 0.4em;
     height: 100%;
     display: grid;
-    grid-template-rows: repeat(3, 1.5em);
+    grid-template-rows: 1.5em 1em 1.5em;
+}
+.item-details-datetime{
+    /* color: gray; */
+    color: white;
+    font-size: 0.6em;
 }
 .item-details > span {
     display: flex;
@@ -119,4 +128,28 @@
     width: 100%;
     height: 100vh;
     position: relative;
+}
+.form-btn {
+    background: yellow;
+    color: #4942e4;
+    margin-top: 0.3em;
+    transition: all ease 0.5s;
+}
+.form-btn:hover {
+    background: #4942e4;
+    color: yellow;
+    transition: all ease 0.5s;
+}
+.item-functionalities > button > a {
+    text-decoration: none;
+    color: white;
+}
+.item-functionalities > button:nth-child(1):hover {
+    border: 1px solid yellow;
+    background: #4942e4;
+    color: white;
+}
+.item-functionalities > button:nth-child(2) {
+    background: red;
+    color: white;
 }

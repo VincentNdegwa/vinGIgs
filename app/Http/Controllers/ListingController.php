@@ -54,7 +54,7 @@ class ListingController extends Controller
         $res = $this->getAll();
         $updatingData = null;
         $userCreatedJobs = null;
-        $userCreatedJobs = Listings::where('email', auth()->user()->email)->get();
+        $userCreatedJobs = Listings::where('email', auth()->user()->email)->orderBy('updated_at', 'DESC')->get();
         foreach ($res['data'] as $r) {
             if ($r->id == $id) {
                 $updatingData = $r;

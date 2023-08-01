@@ -25,6 +25,6 @@
         <input type="text" class="form-control" name=" description" placeholder="Description......." required>
     </div>
     <div class="form-item">
-        <input type="submit" class="form-control" value="Create Job">
+        <input type="submit" class="form-control form-btn" value="Create Job">
     </div>
 </form>
