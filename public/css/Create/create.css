@@ -94,7 +94,24 @@
     left: 0;
     z-index: 101;
     background-color: rgba(0, 0, 0, 0.5);
-    /* background: rgba(0, 0, 0, 0.3); */
+    display: grid;
+    place-items: center;
+}
+.edit-display > form {
+    width: 60%;
+    height: auto;
+}
+.exit-btn {
+    z-index: 102;
+    top: 0.5em;
+    left: 0.5em;
+    position: absolute;
+    background: #4942e4;
+    padding: 1%;
+    color: white;
+    border-radius: 0.5em;
+    border: 0px;
+    outline: none;
 }
 .edit-display-hide {
     z-index: -101;

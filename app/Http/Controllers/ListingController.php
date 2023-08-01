@@ -29,19 +29,42 @@ class ListingController extends Controller
             }
         }
     }
+
+    public function listingEdit(Request $data)
+    {
+        $itemId = $data->input('id');
+        $update = Listings::where('id', $itemId)->update([
+            "title" =>  $data->input('title'),
+            "description" =>   $data->input('desc'),
+            "tags" => $data->input('tags'),
+            "company" => $data->input('company'),
+            "location" => $data->input('location'),
+            "website" => $data->input('website'),
+            "description" => $data->input('description')
+        ]);
+
+        if($update){
+            return redirect('/create');
+        }else{
+            return redirect('/');
+        }
+    }
     public function listingGet($id)
     {
         $res = $this->getAll();
-
+        $updatingData = null;
+        $userCreatedJobs = null;
+        $userCreatedJobs = Listings::where('email', auth()->user()->email)->get();
         foreach ($res['data'] as $r) {
             if ($r->id == $id) {
+                $updatingData = $r;
                 return view('pages.create', [
-                    'userCreatedJobs' => Listings::where('email', auth()->user()->email)->get(),
-                    'updatingData' => $r,
+                    'userCreatedJobs' => $userCreatedJobs,
+                    'updatingData' => $updatingData,
+                    'dataCreated' => null
                 ]);
             }
         }
-
     }
 
 
@@ -67,16 +90,5 @@ class ListingController extends Controller
 
         $item = DB::table('listings')->where('id', $id)->delete();
         return redirect('/create');
-        // $item = Listings::find($id);
-
-        // return dd($item);
-        // if (!$item) {
-        //     return response()->json([
-        //         'msg' => "Item not found",
-        //     ]);
-        // } else {
-        //     $item->delete();
-        //     return redirect("/create");
-        // }
     }
 }
