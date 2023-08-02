@@ -12,8 +12,9 @@ class ListingController extends Controller
 {
     public function getAll()
     {
+        $data = Listings::with('userTable')->get();
         return view('pages.home', [
-            'data' => DB::table('listings')->get(),
+            'data' => $data,
         ]);
     }
 
@@ -43,9 +44,9 @@ class ListingController extends Controller
             "description" => $data->input('description')
         ]);
 
-        if($update){
+        if ($update) {
             return redirect('/create');
-        }else{
+        } else {
             return redirect('/');
         }
     }
@@ -73,6 +74,7 @@ class ListingController extends Controller
         $latest = json_encode(Listings::create([
             "title"     =>  $data["title"],
             "description" =>   $data["desc"],
+            "creater_id" => auth()->id(),
             "tags" => $data['tags'],
             "company" => $data['company'],
             "location" => $data['location'],

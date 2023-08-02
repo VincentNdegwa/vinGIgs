@@ -1,7 +1,17 @@
  @props(['item'])
  <a href="/list/{{ $item->id }}" class="item-holder">
      <div class="item-img">
-         <img src="/images/product.jpeg" alt="">
+         @php
+             $userData = $item->userTable;
+             
+             if ($userData && isset($userData->profile_path)) {
+                 $imagePath = asset('storage/' . $userData->profile_path);
+             } else {
+                 $imagePath = asset('images/product.jpeg');
+             }
+         @endphp
+
+         <img src="{{ $imagePath }}" alt="">
      </div>
      <div class="list-item">
          <h6>{{ $item->title }}</h6>

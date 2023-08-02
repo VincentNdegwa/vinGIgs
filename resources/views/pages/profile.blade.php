@@ -2,15 +2,15 @@
 @section('content')
     <section>
         <div class="user-profile-container">
-            <form action="/profile/edit" method="POST" class="form-control profile-form">
+            <form action="/profile/edit" method="POST" class="form-control profile-form" enctype="multipart/form-data">
                 @csrf
                 <div class="form-item profile-form-item">
                     <div class="image-profile-holder">
-                        <img src="/images/product.jpeg" alt="profile" id="profile-image-preview">
+                        <img  src="{{ asset('storage/'. $userData->profile_path) }}" alt="profile" id="profile-image-preview">
                         <label for="profile-image">
                             <i class='bx bxs-edit-alt'></i>
                         </label>
-                        <input type="file" name="profile-image" id="profile-image" style="display: none;" readonly>
+                        <input type="file" name="profile-image" id="profile-image" style="display: none;">
                     </div>
                 </div>
                 <div class="form-item">
@@ -21,13 +21,12 @@
                 <div class="form-item">
                     <label class="form-label">Email</label>
                     <input type="text" class="form-control" value="{{ $userData->email }}" name="email"
-                         placeholder="test@gmail.com"required readonly>
+                        placeholder="test@gmail.com"required readonly>
                 </div>
                 <div class="form-item">
                     <label class="form-label">Email Verification Status</label>
                     <input type="text" class="form-control"
-                        value="{{ $userData->email_verified_at ? 'Verified' : 'Not Valid' }}" 
-                        required readonly>
+                        value="{{ $userData->email_verified_at ? 'Verified' : 'Not Valid' }}" required readonly>
                 </div>
                 <div class="form-item">
                     <label class="form-label">New Password</label>

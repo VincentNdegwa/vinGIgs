@@ -10,8 +10,9 @@ class Listings extends Model
 {
     use HasFactory;
 
-    protected $fillable= [
-        'title',
+    protected $fillable = [
+        'title',  
+        'creater_id',
         'description',
         'tags',
         'company',
@@ -21,21 +22,8 @@ class Listings extends Model
         'description'
 
     ];
-
-    public static function getAll()
+    public function userTable()
     {
-        return DB::table('listings')->get();
-    }
-
-
-    public static function find($id)
-    {
-        $listings = self::getAll();
-        foreach($listings as $list){
-            if($list->id == $id){
-                return [$list];
-            }
-        }
+        return $this->belongsTo(User::class, 'creater_id');
     }
 }
-

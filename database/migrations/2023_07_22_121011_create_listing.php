@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('creater_id')->nullable();
+            $table->foreign('creater_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title');
             $table->string('tags');
             $table->string('company');
@@ -29,6 +31,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('listings', function(Blueprint $table){
+            $table->dropForeign(['creator_id']);
+        });
         Schema::dropIfExists('listing');
     }
 };

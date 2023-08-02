@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -46,16 +47,27 @@ class UserController extends Controller
     }
 
     public function updateUser(Request $data){
-        $user = User::find(auth()->id());
-        $updateUser = $user->update([
-            "name"=>$data->input('name'),
-            "email"=>$data->input('email'),
-            "password"=>$data->input('password'),
-        ]);
-        if ($updateUser) {
-           return redirect("/profile");
-        }else{
-           return redirect("/");
+        if ($data->hasFile('profile-image')) {
+            $image = $data->file('profile-image');
+
+            $user = User::find(auth()->id());
+            if ($user->profile_path) {
+                Storage::disk('public')->delete($user->profile_path);
+            }
+
+            $imagePath = $image->store('profileImages', 'public');
+            $updateUser = $user->update([
+                "name"=>$data->input('name'),
+                "email"=>$data->input('email'),
+                "password"=>$data->input('password'),
+                "profile_path"=>$imagePath
+            ]);
+            if ($updateUser) {
+               return redirect("/profile");
+            }else{
+               return redirect("/");
+            }
+           
         }
         
     }

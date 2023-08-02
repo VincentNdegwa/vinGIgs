@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="css/Login/login.css" />
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"> --}}
 </head>
 
 <body>
@@ -23,6 +24,13 @@
                 <label>Email:</label>
                 <input class="input" id="email" name="email" type="email" required
                     placeholder="justina@gmail.com" />
+            </div>
+            <div class="form-item">
+                <label>Role</label>
+                <select class="form-control" name="role">
+                    <option selected value="Recruitee">Recruitee</option>
+                    <option value="Recruiter">Recruiter</option>
+                </select>
             </div>
             <div class="form-item">
                 <label>Password:</label>

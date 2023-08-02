@@ -21,7 +21,12 @@
         </div>
         <nav class="navbars">
             <button><a href="/">Home</a></button>
-            <button><a href="/create">Create Task</a></button>
+            @auth
+                @if (auth()->user()->role == 'Recruiter')
+                    <button><a href="/create">Create Job</a></button>
+                @endif
+
+            @endauth
             <button><a href="/login">Login</a></button>
             <button><a href="/register">Register</a></button>
         </nav>

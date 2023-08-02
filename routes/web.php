@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // listings
-Route::get('/', [ListingController::class, 'getAll'])->name('listingsAll')->middleware('auth');
+Route::get('/', [ListingController::class, 'getAll'])->name('listingsAll');
 Route::get('/list/{id}', [ListingController::class, 'show'])->middleware('auth');
 Route::post('/list/create', [ListingController::class, 'create'])->middleware('auth');
 Route::post('/list/edit', [ListingController::class, 'listingEdit'])->name('listingEdit')->middleware('auth');

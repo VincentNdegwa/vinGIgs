@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('role')->default('recruitee');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -27,6 +28,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('listings', function (Blueprint $table) {
+            $table->dropForeign(['creater_id']);
+        });
         Schema::dropIfExists('users');
     }
 };
