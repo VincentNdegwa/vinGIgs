@@ -29,6 +29,10 @@ Route::get("/register", function () {
     auth()->logout();
     return view("auth.register");
 });
+Route::get("/test-app", function () {
+    return view("pages.test");
+});
+
 
 
 Route::get("/create", function () {
