@@ -17,7 +17,7 @@ class UserController extends Controller
             auth()->login($user);
             return redirect('/');
         } else {
-            return redirect('/login');
+            return redirect('/login')->with('message', 'failed to verify you. Please enter valid details');
         }
     }
 
@@ -26,7 +26,7 @@ class UserController extends Controller
         if (auth()->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
             return redirect('/');
         }
-        return redirect('/login');
+        return redirect('/login')->with('message', 'Incorrect credentials!! Please enter correct details');
     }
 
     public function getUserDetails()

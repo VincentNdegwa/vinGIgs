@@ -45,5 +45,6 @@
 </body>
 <script src="/js/sendData.js"></script>
 <script src="/js/profile.js"></script>
+<script src="/js/main.js"></script>
 
 </html>

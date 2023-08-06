@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    @if (session('message'))
+        <div class="alert alert-danger">
+            {{ session('message') }}
+        </div>
+    @endif
+
     <div class="form-container">
         <h1>
             <p>Login</p><i class='bx bx-user-pin'></i>
@@ -17,7 +23,7 @@
             @csrf
             <div class="form-item">
                 <label>Email:</label>
-                <input class="input" id="email" name="email" type="email" required
+                <input class="input" id="email" name="email" type="email" value="{{ old('email') }}" required
                     placeholder="justina@gmail.com" />
             </div>
             <div class="form-item">
@@ -32,5 +38,6 @@
     </div>
     {{-- <script src="js/validateForm.js"></script> --}}
 </body>
+<script src="/js/flash.js"></script>
 
 </html>

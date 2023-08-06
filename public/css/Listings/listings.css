@@ -1,59 +1,108 @@
-.listing-container{
+.listing-container {
     width: 100%;
     padding-top: 3rem;
     display: grid;
     justify-items: center;
 }
-.listing-display-holder{
+.listing-display-holder {
     padding: 1rem;
     width: 100%;
     box-shadow: 2px 1px 7px rgba(0, 0, 0, 0.5);
 }
-.logo-img{
+.logo-img {
     width: 6em;
     height: 6em;
     border-radius: 50%;
-
 }
-.logo-img>img{
+.logo-img > img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
-.listing>p{
+.listing > p {
     color: yellow;
 }
-.listings-btns{
+.listings-btns {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 1%;
 }
-.listings-btns>button{
+.listings-btns > button {
     border: 0px;
     outline: none;
     margin-top: 1%;
     padding: 0.5%;
     color: #4942e4;
 }
-.listings-btns>:nth-child(1){
+.listings-btns > :nth-child(1) {
     background: #4942e4;
     color: white;
 }
-.listings-btns>:nth-child(2){
+.listings-btns > :nth-child(2) {
     background: yellow;
     color: #4942e4;
 }
-.listing>span{
+.listing > span {
     display: flex;
     width: 100%;
     gap: 2em;
     justify-content: center;
     align-items: center;
 }
-.listing>span>p{
+.listing > span > p {
     padding: 0.7%;
     background: #4942e4;
     color: yellow;
     border-radius: 0.3em;
+}
+.apply-easy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 101;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5rem;
+}
+.apply-easy-hide {
+    opacity: 0 !important;
+    position: relative;
+    z-index: -10;
+}
+.gig-holder{
+    background: #4942e4;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 3rem 0px 3rem;
+}
+.gig-send-apply{
+    /* height: 100%; */
+    min-height: 70vh;
+}
+.form-apply{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cv-label{
+    background: #4942e4;
+}
+.gig-send-apply>form>div{
+    height: 60%;
+}
+.apply-textarea{
+    height: 100%;
+    resize: none;
+    overflow: auto!important;
+}
+.apply-btn{
+    background: yellow;
+    color: #4942e4;
+    border: 0px;
+    outline: none;
+    padding: 0.4rem;
 }
