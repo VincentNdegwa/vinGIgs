@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 // listings
 Route::get('/', [ListingController::class, 'getAll'])->name('listingsAll');
+Route::post('/search', [ListingController::class, 'searchListing'])->name('searchListing');
 Route::get('/list/{id}', [ListingController::class, 'show'])->middleware('auth');
 Route::post('/list/create', [ListingController::class, 'create'])->middleware('auth');
 Route::post('/list/edit', [ListingController::class, 'listingEdit'])->name('listingEdit')->middleware('auth');
@@ -53,12 +54,9 @@ Route::prefix('/users')->group(function () {
 
 Route::prefix('/application')->group(function () {
     Route::post('/send', [applicationController::class, 'sendApplication'])->name('sendApplication');
-    Route::get('/applicants', [applicationController::class ,'viewApplicants']);
+    Route::get('/applicants', [applicationController::class, 'viewApplicants']);
     Route::get('/applied', [applicationController::class, 'viewApplied']);
-    Route::get("/{id}",[applicationController::class, "reviewApplication"]);
+    Route::get("/{id}", [applicationController::class, "reviewApplication"]);
     Route::get('/reject/{id}', [applicationController::class, "rejectApplication"]);
     Route::get('/accept/{id}', [applicationController::class, "acceptApplication"]);
-
 });
-
-

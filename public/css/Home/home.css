@@ -73,6 +73,9 @@ article {
     width: 100%;
     padding: 2%;
 }
+article > form {
+    width: 100%;
+}
 label {
     display: flex;
     justify-content: center;

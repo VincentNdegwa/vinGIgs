@@ -93,4 +93,20 @@ class ListingController extends Controller
         $item = DB::table('listings')->where('id', $id)->delete();
         return redirect('/create');
     }
+
+
+
+    public function searchListing(Request $r)
+    {
+        $search = $r->input('listing_search');
+        $data = Listings::where('title', 'LIKE', "%$search%")
+            ->orWhere("description", "LIKE", "%$search%")
+            ->orWhere('website', "LIKE", "%$search%")
+            ->orWhere('tags', "LIKE", "%$search%")
+            ->get();
+
+        return view('pages.home', [
+            'data' => $data,
+        ]);
+    }
 }
