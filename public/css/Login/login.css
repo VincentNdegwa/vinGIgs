@@ -70,6 +70,7 @@ form {
     font-size: 2em;
     text-align: center;
 }
+
 .alert {
     position: absolute;
     top: 0.4em;
@@ -81,7 +82,7 @@ form {
 }
 .alert-hide {
     position: absolute;
-    top: -100%;
+    top: -100vh;
     background: white;
     color: #e90064;
     border: 0px solid;

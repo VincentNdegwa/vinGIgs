@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\applicationController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\UserController;
+use App\Models\Applications;
 use App\Models\Listings;
 use Illuminate\Support\Facades\Route;
 
@@ -48,3 +50,15 @@ Route::prefix('/users')->group(function () {
     Route::post('/register', [UserController::class, 'registerUser']);
     Route::post('/login', [UserController::class, 'loginUser']);
 });
+
+Route::prefix('/application')->group(function () {
+    Route::post('/send', [applicationController::class, 'sendApplication'])->name('sendApplication');
+    Route::get('/applicants', [applicationController::class ,'viewApplicants']);
+    Route::get('/applied', [applicationController::class, 'viewApplied']);
+    Route::get("/{id}",[applicationController::class, "reviewApplication"]);
+    Route::get('/reject/{id}', [applicationController::class, "rejectApplication"]);
+    Route::get('/accept/{id}', [applicationController::class, "acceptApplication"]);
+
+});
+
+

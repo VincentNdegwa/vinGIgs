@@ -7,10 +7,20 @@ function displayApply() {
     } else {
         applyDisplay.classList.remove("apply-easy");
         applyDisplay.classList.add("apply-easy-hide");
-
     }
 }
 function exitApply() {
     applyDisplay.classList.remove("apply-easy");
     applyDisplay.classList.add("apply-easy-hide");
+}
+
+function OpenOverlay() {
+    let overlay = document.querySelector(".overlay-applicants-hide");
+    overlay.classList.remove("overlay-applicants-hide");
+    overlay.classList.add("overlay-applicants");
+}
+function CloseOverlay() {
+    let overlay = document.querySelector(".overlay-applicants");
+    overlay.classList.remove("overlay-applicants");
+    overlay.classList.add("overlay-applicants-hide");
 }

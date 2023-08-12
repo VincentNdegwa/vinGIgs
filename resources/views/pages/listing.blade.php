@@ -54,16 +54,23 @@
                         </div>
 
                         <div class="gig-send-apply">
-                            <form action="" method="post" class="form-control form-apply">
+                            <form action="/application/send" method="post" class="form-control form-apply"
+                                enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="recruiter_id" value="{{ $data[0]['creater_id'] }}">
+                                <input type="hidden" name="listing_id" value="{{ $data[0]['id'] }}">
+                                <input type="hidden" name="job_tittle" value="{{ $data[0]['title'] }}">
                                 <div class="form-control">
-                                    <textarea class="form-control apply-textarea" placeholder="Letter to the HR" id="floatingTextarea" required></textarea>
+                                    <textarea class="form-control apply-textarea" name="application_text" placeholder="Letter to the HR"
+                                        id="floatingTextarea" required></textarea>
                                 </div>
                                 <label for="" class="form-control cv-label">
                                     Select your CV
-                                    <input type="file" name="" id="" class="form-control" required>
+                                    <input type="file" name="cv_file" id="" class="form-control" required>
                                 </label>
                                 <input type="submit" class="form-cotrol apply-btn" value="Apply Job">
                             </form>
+
                         </div>
                     </div>
                 </div>

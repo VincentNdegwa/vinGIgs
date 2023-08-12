@@ -26,4 +26,12 @@ class Listings extends Model
     {
         return $this->belongsTo(User::class, 'creater_id');
     }
+
+    // public function jobApplied(){
+    //     return $this->hasMany(User::class ,'id');
+    // }
+
+    // public function jobCreated(){
+    //     return $this->hasMany(User::class, 'creater_id');
+    // }
 }
