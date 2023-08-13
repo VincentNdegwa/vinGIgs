@@ -11,9 +11,7 @@
 
 <body>
     <div class="form-container">
-        <h1>
-            <p>Register</p><i class='bx bx-user-pin'></i>
-        </h1>
+        <h3>Register</h3>
         <form action="/users/register" method="POST">
             @csrf
             <div class="form-item">

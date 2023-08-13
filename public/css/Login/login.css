@@ -26,7 +26,7 @@ body {
     font-family: "Nunito Sans", sans-serif;
 }
 .form-container {
-    width: 45%;
+    min-width: 380px;
     height: auto;
     padding: 2%;
     background: var(--main-font);
@@ -87,4 +87,17 @@ form {
     color: #e90064;
     border: 0px solid;
     transition: all ease 2s;
+}
+
+@media screen and (min-width:900px) {
+    .form-container {
+        min-width: 450px;
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .form-container {
+        width: 97%;
+    }
 }

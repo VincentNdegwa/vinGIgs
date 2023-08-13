@@ -8,11 +8,11 @@
     padding-top: 1rem;
 }
 .item-img {
-    object-fit: cover;
+    /* object-fit: cover; */
     height: 100%;
 }
 .item-img > img {
-    object-fit: cover;
+    /* object-fit: cover; */
     width: 100%;
     height: 200px;
     border-radius: 0.3em;
@@ -103,4 +103,33 @@ label > .bx {
     width: 2em;
     display: grid;
     place-items: center;
+}
+
+@media screen and (max-width: 700px) {
+    .item-holder {
+        display: grid;
+        grid-template-columns: 0.3fr 1fr;
+    }
+    .item-img > img {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-top: 0.4em;
+    }
+    .search_form > label {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .hero-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+        .item-img > img {
+        width: 4rem;
+        height: 4rem;
+        margin-top: 0.4em;
+        margin-left: 0.3em;
+    }
 }

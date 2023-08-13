@@ -24,8 +24,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding-left: 5%;
-    padding-right: 5%;
+    /* padding-right: 5%; */
     z-index: 100;
+    gap: 6em;
 }
 main {
     width: 100%;
@@ -55,6 +56,8 @@ footer {
     flex-direction: row;
     gap: 5%;
     width: 50%;
+    justify-content: flex-end;
+    align-items: center;
     /* height: 1.2em; */
 }
 .navbars > button {
@@ -76,6 +79,8 @@ footer {
     display: flex;
     gap: 0.5em;
     text-decoration: none;
+    align-items: center;
+    height: 100%;
     font-size: 2em;
     background: linear-gradient(45deg, #4942e4, yellow);
     -webkit-background-clip: text;
@@ -84,10 +89,14 @@ footer {
 }
 .other-diplays > p,
 .other-diplays > p > a {
-    /* font-size: 1.7em; */
     text-decoration: none;
 
     /* color: yellow; */
+}
+.other-diplays > p {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5em;
 }
 
 .alert {
@@ -109,7 +118,56 @@ footer {
     z-index: 1000;
     transition: all ease 2s;
 }
-.alert-error{
-    background: #C70039 !important;
+.alert-error {
+    background: #c70039 !important;
     color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .navbars {
+        display: none;
+        transform: translateX(-100%);
+        transition: all ease 1.3s;
+    }
+    .navbars-active {
+        position: absolute;
+        width: 100%;
+        height: 80vh;
+        top: 5em;
+        left: 0;
+        background: #eee2de;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        padding: 2em;
+        overflow-y: scroll;
+        transform: translateX(0%);
+        transition: all ease 1.3s;
+    }
+    .navbars-active > button {
+        width: 100%;
+        height: 3em;
+        background: #4942e4;
+        color: white;
+        margin-top: 0.4em;
+        border-radius: 0.3em;
+        border: 0px;
+    }
+    .navbars-active > button > a {
+        text-decoration: none;
+        color: white;
+    }
+    .other-diplays {
+        display: none;
+    }
+    .menu-hum {
+        margin-right: 0.5em;
+        font-size: 2.5em;
+    }
+}
+@media screen and (min-width: 601px) {
+    .bx-menu-alt-right {
+        display: none;
+    }
 }

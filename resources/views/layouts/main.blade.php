@@ -32,6 +32,7 @@
         <div class="logo">
             <h1>vin<span>Gigs</span></h1>
         </div>
+
         <nav class="navbars">
             <button><a href="/">Home</a></button>
             @auth
@@ -46,11 +47,17 @@
 
             <button><a href="/login">Login</a></button>
             <button><a href="/register">Register</a></button>
+
+
+            <div class="other-diplays">
+                <p><a href="{{ url('/profile') }}"><i class='bx bx-user-circle'></i></a> </p>
+                <p><i class='bx bxs-bell'></i></p>
+            </div>
         </nav>
-        <div class="other-diplays">
-            <p><a href="{{ url('/profile') }}"><i class='bx bx-user-circle'></i></a> </p>
-            <p><i class='bx bxs-bell'></i></p>
-        </div>
+
+
+
+        <h1 class="menu-hum"><i class='bx bx-menu-alt-right'></i></h1>
     </header>
     <main>
         @yield('content')
