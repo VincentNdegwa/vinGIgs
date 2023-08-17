@@ -60,7 +60,7 @@
     display: grid;
     grid-template-rows: 1.5em 1em 1.5em;
 }
-.item-details-datetime{
+.item-details-datetime {
     /* color: gray; */
     color: white;
     font-size: 0.6em;
@@ -152,4 +152,19 @@
 .item-functionalities > button:nth-child(2) {
     background: red;
     color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .create-section {
+        display: flex;
+        flex-direction: column;
+    }
+    .edit-display > form {
+        width: 90%;
+        height: 80%;
+        position: relative;
+    }
+    .edit-display {
+        position: fixed;
+    }
 }

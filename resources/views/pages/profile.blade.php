@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-item mt-4 d-flex">
                     <input type="button" value="Activate Edit" class="form-control profile-edit-btn">
-                    <input type="button" value="Delte Profile" class="form-control profile-delete-btn">
+                    <input type="button" value="Delete Profile" class="form-control profile-delete-btn">
                 </div>
             </form>
         </div>

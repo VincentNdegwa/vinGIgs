@@ -70,39 +70,77 @@
     opacity: 0 !important;
     position: relative;
     z-index: -10;
+    height: 1%;
 }
-.gig-holder{
+.gig-holder {
     background: #4942e4;
     color: white;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0px 3rem 0px 3rem;
 }
-.gig-send-apply{
+.gig-send-apply {
     /* height: 100%; */
     min-height: 70vh;
 }
-.form-apply{
+.form-apply {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.cv-label{
+.cv-label {
     background: #4942e4;
 }
-.gig-send-apply>form>div{
+.gig-send-apply > form > div {
     height: 60%;
 }
-.apply-textarea{
+.apply-textarea {
     height: 100%;
     resize: none;
-    overflow: auto!important;
+    overflow: auto !important;
 }
-.apply-btn{
+.apply-btn {
     background: yellow;
     color: #4942e4;
     border: 0px;
     outline: none;
     padding: 0.4rem;
+}
+
+@media screen and (max-width: 700px) {
+    .apply-easy {
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+    }
+    .gig-holder {
+        background: #4942e4;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1em;
+
+        /* padding: 0px 3rem 0px 3rem; */
+    }
+    .apply-textarea {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .apply-easy {
+        height: max-content;
+        display: flex;
+    }
+    .gig-holder {
+        background: #4942e4;
+        color: white;
+        width: 100%;
+    }
+    .apply-textarea {
+        height:25rem;
+    }
 }

@@ -80,7 +80,7 @@ footer {
     gap: 0.5em;
     text-decoration: none;
     align-items: center;
-    height: 100%;
+    /* height: 100%; */
     font-size: 2em;
     background: linear-gradient(45deg, #4942e4, yellow);
     -webkit-background-clip: text;
@@ -124,6 +124,10 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+    main {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
     .navbars {
         display: none;
         transform: translateX(-100%);
@@ -153,13 +157,33 @@ footer {
         margin-top: 0.4em;
         border-radius: 0.3em;
         border: 0px;
+        transition: all ease 1s;
+    }
+    .navbars-active > button:focus {
+        background: #4942e4;
+        color: yellow;
+        transition: all ease 1s;
     }
     .navbars-active > button > a {
         text-decoration: none;
         color: white;
     }
     .other-diplays {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #c70039;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .other-diplays > p {
+        font-size: 1.2em;
+        width: 100%;
+        justify-content: center;
+    }
+    .other-diplays > p > a {
+        color: white;
     }
     .menu-hum {
         margin-right: 0.5em;
@@ -169,5 +193,11 @@ footer {
 @media screen and (min-width: 601px) {
     .bx-menu-alt-right {
         display: none;
+    }
+}
+@media screen and (max-width: 450px) {
+    main {
+        padding-left: 2%;
+        padding-right: 2%;
     }
 }
