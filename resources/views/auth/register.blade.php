@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    @if (session('message'))
+        <div class="alert alert-danger">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="form-container">
         <h3>Register</h3>
         <form action="/users/register" method="POST">

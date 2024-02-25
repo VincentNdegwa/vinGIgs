@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -12,6 +13,12 @@ class UserController extends Controller
 
     public function registerUser(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            "email" => "required|unique:users,email"
+        ]);
+        if ($validator->fails()) {
+            return redirect("/register")->with("message", $validator->errors()->first());
+        }
         $user = User::create($request->all());
         if ($user) {
             auth()->login($user);
@@ -46,7 +53,8 @@ class UserController extends Controller
         ]);
     }
 
-    public function updateUser(Request $data){
+    public function updateUser(Request $data)
+    {
         if ($data->hasFile('profile-image')) {
             $image = $data->file('profile-image');
 
@@ -57,18 +65,16 @@ class UserController extends Controller
 
             $imagePath = $image->store('profileImages', 'public');
             $updateUser = $user->update([
-                "name"=>$data->input('name'),
-                "email"=>$data->input('email'),
-                "password"=>$data->input('password'),
-                "profile_path"=>$imagePath
+                "name" => $data->input('name'),
+                "email" => $data->input('email'),
+                "password" => $data->input('password'),
+                "profile_path" => $imagePath
             ]);
             if ($updateUser) {
-               return redirect("/profile");
-            }else{
-               return redirect("/");
+                return redirect("/profile");
+            } else {
+                return redirect("/");
             }
-           
         }
-        
     }
 }
